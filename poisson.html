@@ -1,0 +1,30 @@
+html
+
+<script type="text/javascript">
+/*La veterinaria de Jorge recibe un promedio de  μ = 4 pacientes al día. Sabiendo que el número de pacientes que
+llegan en un día sigue una distribución de Poisson, calcular la probabilidad de que lleguen 3 pacientes en 1 día.
+*/
+alert("Buen día, gracias por ingresar a nuestro programa");
+
+let mu = parseInt(prompt("Ingrese el número de mu (μ): ")); 
+let x = parseInt(prompt("Ingrese el número de probabilidad: "));
+const e = 2.71828
+
+
+function probabilidad(){
+    exponente1 = Math.pow(e,-mu); // Math.pow funciona retorna la base elevada al exponente
+    exponente2 = Math.pow(mu,x);
+    probabilidad = ((exponente1*exponente2)/factorial(x))*100
+    return `La probabilidad es de: ${Math.trunc(probabilidad)} %`
+}
+
+function factorial(x) {
+    if (x === 0 || x === 1) {
+        return 1;
+    } else {
+        return x * factorial(x - 1);
+    }
+}
+
+console.log(probabilidad());
+</script>
